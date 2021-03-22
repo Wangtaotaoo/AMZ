@@ -18,7 +18,7 @@ class ExampleUnitTest {
     }
 
     @Test
-    fun parseUrl() {
+    fun parseTitles() {
         val doc = Jsoup.connect("https://www.mzitu.com/").get()
         val titles = doc.select("[id=menu-nav]")
             .select("li")
@@ -56,4 +56,18 @@ class ExampleUnitTest {
         val pageNextHref = page.select("[class = next page-numbers]").attr("href")
         println(pageNextHref )
     }
+
+
+//    @Test
+//    fun parseTitles() {
+//        val doc = Jsoup.connect("https://www.mzitu.com/")
+//            .header("User-Agent","Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.93 Safari/537.36").get()
+//        val page = doc.select(".nav-links")
+//        val pageCurrent =    page.select("[aria-current]").text()
+//        val pageTotal =  page.select("[class = page-numbers]").last().text()
+//        val pageNextHref = page.select("[class = next page-numbers]").attr("href")
+//        println(pageNextHref )
+//    }
+
+
 }
